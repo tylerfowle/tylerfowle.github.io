@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600,700");
 
+* {
+	box-sizing: border-box;
+}
+
 html, body {
 	height: 100%;
 	width: 100%;
@@ -48,6 +52,7 @@ html, body {
 			padding: 10px 25px;
 			color: #fff;
 			text-decoration: none;
+			transition: 0.5s ease all;
 			&:hover {
 				background: rgba(#fff, 0.2);
 			}
@@ -64,7 +69,18 @@ html, body {
 }
 
 .primary {
-	padding: 20px;
 	background: #eee;
 	width: 100%;
+	height: 100%;
+}
+
+.page {
+	display: none;
+	padding: 20px;
+	width: 100%;
+	height: 100%;
+}
+
+#about {
+	display: block;
 }
