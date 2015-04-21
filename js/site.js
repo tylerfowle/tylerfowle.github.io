@@ -1,7 +1,12 @@
 //site.js
+//functions
 function remover() {
   $('body').removeClass('home_page work_page social_page contact_page');
 }
+
+$(window).load(function(){
+  $('body').addClass('window_load');
+}); //end window load
 
 $(document).ready(function(){
 
@@ -37,4 +42,4 @@ $(document).ready(function(){
   });
 
 
-}); //end document
+}); //end document ready

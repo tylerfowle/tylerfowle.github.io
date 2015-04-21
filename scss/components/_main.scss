@@ -17,10 +17,15 @@ html {
 }
 
 body {
-	background: #222;
 	font-family: "Open Sans";
 	font-weight: 300;
-	background: url("../graphics/backgrounds/green_mountains.jpg") 50% 50% / cover no-repeat;
+	background: #222 url("../graphics/backgrounds/green_mountains.jpg") 50% 50% / cover no-repeat;
+}
+
+body.window_load {
+	.site_wrap {
+		background: rgba(#000, .75);
+	}
 }
 
 .wrap {
@@ -130,7 +135,9 @@ nav.main_nav {
 	right: 0;
 	left: 0;
 	padding: 0 50px 0 (50px + 100px);
-	background: rgba(#000, .75);
+	background: #222;
+	transition: all 1s ease-out;
+
 	@include small-down {
 		padding: 0 50px;
 	}
