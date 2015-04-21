@@ -1,6 +1,8 @@
 @import "vendor/_normalize";
 
-@import "components/_settings";
-@import "components/_header";
-@import "components/_main";
-@import "components/_footer";
+@import "components/mixins";
+
+@import "components/settings";
+@import "components/header";
+@import "components/main";
+@import "components/footer";
