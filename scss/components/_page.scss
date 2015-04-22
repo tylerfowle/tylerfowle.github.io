@@ -1,0 +1,84 @@
+/*
+//==========================\\
+|| Page Setter              ||
+\\==========================//
+*/
+body {
+  background: #000;
+}
+
+.wrap {
+  position: relative;
+  z-index: 990;
+}
+
+.main {
+  // position: absolute;
+  // top: 0;
+  // right: 0;
+  // bottom: 0;
+  // left: 0;
+  .wrap {
+    padding-bottom: 100px;
+  }
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 900;
+  height: 100%;
+  width: 100%;
+  padding: 100px 140px;
+  opacity: 0;
+  visibility: hidden;
+
+  @include medium-up {
+    transition: opacity .5s ease-out;
+  }
+  
+  @include small-down{
+    padding: 100px 40px 300px;
+  }
+
+  &:after {
+    content: "";
+    opacity: 0.25;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+  }
+}
+
+@mixin page-setter($class, $bg-image) {
+  body.#{$class}_page {
+    .#{$class}_content {
+      opacity: 1;
+      visibility: visible;
+
+      @include medium-up {
+        transition: opacity .5s ease-out;
+      }
+      z-index: 800;
+      &:after {
+        background: url("../graphics/backgrounds/#{$bg-image}") 50% 50% / cover no-repeat;
+      }
+    }
+  }
+  .#{$class}_content {
+    &:after {
+      background: url("../graphics/backgrounds/#{$bg-image}") 50% 50% / cover no-repeat;
+    }
+  }
+  
+}//
+
+@include page-setter(home, "modern_meeting.jpg");
+@include page-setter(work, "icy_mountains.jpg");
+@include page-setter(social, "transit_seats.jpg");
+@include page-setter(contact, "bed_coffee.jpg");
+
+
+
+

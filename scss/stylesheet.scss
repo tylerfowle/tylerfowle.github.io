@@ -1,8 +1,27 @@
-@import "vendor/_normalize";
+//reset
+@import "vendor/normalize";
+@import "components/reset";
 
+//mixins
 @import "components/mixins";
 
+//settings
 @import "components/settings";
+@import "components/structure";
+
+//general stuff
+@import "components/general";
+
+//layouts
 @import "components/header";
+@import "components/homepage";
 @import "components/main";
 @import "components/footer";
+
+//nav
+@import "components/nav";
+@import "components/nav_open";
+@import "components/page";
+
+//content
+@import "components/social_content";

@@ -1,0 +1,17 @@
+/*
+//==========================\\
+|| Nav Open                 ||
+\\==========================//
+*/
+
+
+//mobile nav
+body.nav_is_visible {
+  nav.main_nav {
+    transform: translateY(-42px);
+    transform: translateY(0);
+    a {
+      position: relative;
+    }
+  }
+}

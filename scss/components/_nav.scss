@@ -1,0 +1,95 @@
+/*
+//==========================\\
+|| Nav                      ||
+\\==========================//
+*/
+
+nav.main_nav {
+  position: fixed;
+  height: 100%;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  transform: translateX(-10px);
+  transition: all .7s ease-out;
+
+  .menu {
+    display: none !important;
+  }
+
+  @include small-down{
+    height: auto;
+    width: 100%;
+    transform: translateX(0) translateY(-100%);
+    .menu {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  ul {
+    position: relative;
+    top: 50%;
+    transform: translate(10px, -100%);
+    @include small-down {
+      transform: none;
+    }
+  }
+
+  li {
+    display: block;
+  }
+
+  a {
+    position: relative;
+    left: -10px;
+    display: block;
+    width: 100%;
+    padding: 30px 20px 30px 30px;
+    text-align: center;
+    transition: all .15s ease-out;
+    @include small-down {
+      padding: 10px;
+      left: 0;
+      position: absolute;
+    }
+  }
+
+  @mixin colors($class, $color) {
+    .#{$class} a {
+      background: $color;
+      &:hover {
+        background: lighten($color, 10%);
+      }
+    }
+  }
+
+  $menu-bg: darken(slategrey, 42%);
+  @include colors(home, #e84c3d);
+  @include colors(work, #1dd1ae);
+  @include colors(social, #3598db);
+  @include colors(contact, #f5c700);
+  @include colors(menu, $menu-bg);
+}
+
+
+@mixin active-page($class) {
+  body.#{$class}_page { 
+    .#{$class} {
+      position: relative;
+      z-index: 100;
+      a {
+        left: 0;
+        padding: 30px 30px 30px 20px;
+        @include small-down {
+          padding: 20px;
+        }
+      }
+    } 
+
+  }
+}
+@include active-page(home);
+@include active-page(work);
+@include active-page(social);
+@include active-page(contact);
