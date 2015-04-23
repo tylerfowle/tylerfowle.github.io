@@ -6,4 +6,37 @@
 
 .social_content {
   
+  .social_icons {
+    width: 100%;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+
+    }
+    li {
+      width: 33%;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    a {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:hover {
+        .fa {
+          opacity: .9;
+        }
+      }
+    }
+    .fa {
+      font-size: 80px;
+      opacity: .7;
+    }
+  }
+
 }

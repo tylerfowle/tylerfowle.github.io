@@ -30,11 +30,18 @@ nav.main_nav {
   ul {
     position: relative;
     top: 50%;
-    transform: translate(10px, -100%);
+    transform: translate(10px, -50%);
     @include small-down {
       transform: none;
     }
+    @media only screen and (max-height: 328px) {
+      top: 0;
+      transform: translate(10px,0);
+      height: 100%;
+    }
   }
+
+  //ul height: 328px
 
   li {
     display: block;
