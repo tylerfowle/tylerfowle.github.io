@@ -4,11 +4,6 @@
 \\==========================//
 */
 
-.main {
-  &:after {
-    opacity: 0;
-  }
-}
 body.window_load {
   .main {
     &:after {
