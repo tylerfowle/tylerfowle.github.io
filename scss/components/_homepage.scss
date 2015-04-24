@@ -4,6 +4,19 @@
 \\==========================//
 */
 
+.main {
+  &:after {
+    opacity: 0;
+  }
+}
+body.window_load {
+  .main {
+    &:after {
+      opacity: .25;
+    }
+  }
+}
+
 body.home_page {
 
 
