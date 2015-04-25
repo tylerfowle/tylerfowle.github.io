@@ -11,14 +11,16 @@
     ul {
       display: flex;
       flex-wrap: wrap;
-
     }
     li {
-      width: 33%;
+      width: (100%/3);
       height: 200px;
       display: flex;
       justify-content: center;
       align-items: center;
+      @include small-down {
+        width: 100%;
+      }
     }
     a {
       width: 100%;
@@ -27,10 +29,21 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      transition: all .2s ease;
       &:hover {
+        background: rgba(#fff, .2);
         .fa {
           opacity: .9;
         }
+        //change color
+        @mixin social($class) {
+          .fa-#{$class} {
+            @extend %#{$class};
+          }
+        }
+        @include social(twitter);
+        @include social(codepen);
+        @include social(github);
       }
     }
     .fa {

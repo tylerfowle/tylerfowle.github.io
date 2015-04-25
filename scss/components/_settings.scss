@@ -11,3 +11,45 @@
 $font-family-1: "Open Sans", sans-serif;
 $wrap-width: 1170px;
 $body-bg-color: #222;
+
+
+//social colors
+$github: #161414;
+$facebook: #3B5998;
+$flickr: #FE0883;
+$foursquare: #8FD400;
+$google: #C63D2D;
+$instagram: #4E433C;
+$linkedin: #4875B4;
+$tumblr: #395774;
+$twitter: #55ACEE;
+$vimeo: #86B32D;
+$youtube: #FF3333;
+$pinterest: #910101;
+$dribbble: #EA4C89;
+$forrst: #5B9A68;
+$codepen: #212121;
+$deviantart: #4E6252;
+$zerply: #9DCC7A;
+$beehance: #008CFF;
+$aim: #FCD20B;
+
+%github { color: $github; }
+%facebook { color: $facebook; }
+%flickr { color: $flickr; }
+%foursquare { color: $foursquare; }
+%google { color: $google; }
+%instagram { color: $instagram; }
+%linkedin { color: $linkedin; }
+%tumblr { color: $tumblr; }
+%twitter { color: $twitter; }
+%vimeo { color: $vimeo; }
+%youtube { color: $youtube; }
+%pinterest { color: $pinterest; }
+%dribbble { color: $dribbble; }
+%forrst { color: $forrst; }
+%codepen { color: $codepen; }
+%deviantart { color: $deviantart; }
+%zerply { color: $zerply; }
+%beehance { color: $beehance; }
+%aim { color: $aim; }
