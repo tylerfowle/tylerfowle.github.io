@@ -11,20 +11,12 @@ nav.main_nav {
   top: 0;
   left: 0;
   transform: translateX(-10px);
-  transition: all .7s ease-out;
-
-  .menu {
-    display: none !important;
-  }
+  transition: transform .7s ease-out;
 
   @include small-down{
     height: auto;
     width: 100%;
     transform: translateX(0) translateY(-100%);
-    .menu {
-      display: block;
-      width: 100%;
-    }
   }
 
   ul {
@@ -32,6 +24,7 @@ nav.main_nav {
     top: 50%;
     transform: translate(10px, -50%);
     @include small-down {
+      top: 0;
       transform: none;
     }
     @media only screen and (max-height: 328px) {
@@ -54,29 +47,42 @@ nav.main_nav {
     width: 100%;
     padding: 30px 20px 30px 30px;
     text-align: center;
-    transition: all .15s ease-out;
+    transition: background .2s ease, padding .5s ease-out;//
     @include small-down {
       padding: 10px;
       left: 0;
       position: absolute;
     }
+
+
   }
 
   @mixin colors($class, $color) {
+    //set nav a backgrounds
     .#{$class} a {
       background: $color;
       &:hover {
         background: lighten($color, 10%);
       }
     }
+
+    // set page title h6 color
+    @at-root {
+      .#{$class}_content {
+        .page_title {
+          h6 {
+            color: $color;
+          }
+        }
+      }      
+    }
+
   }
 
-  $menu-bg: darken(slategrey, 42%);
   @include colors(home, #e84c3d);
   @include colors(work, #1dd1ae);
   @include colors(social, #3598db);
   @include colors(contact, #f5c700);
-  @include colors(menu, $menu-bg);
 }
 
 
@@ -90,6 +96,8 @@ nav.main_nav {
         padding: 30px 30px 30px 20px;
         @include small-down {
           padding: 20px;
+          transform: translateY(0);
+          transition: .5s transform all 1s;
         }
       }
     } 

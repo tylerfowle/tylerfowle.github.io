@@ -26,9 +26,10 @@ body {
   padding: 100px 140px;
   opacity: 0;
   visibility: hidden;
+  top: -100%;
 
   @include medium-up {
-    transition: opacity .5s ease-out;
+    transition: opacity .8s ease-out, top .75s ease-out;
   }
   
   @include small-down{
@@ -53,10 +54,7 @@ body {
       opacity: 1;
       visibility: visible;
       z-index: 800;
-
-      @include medium-up {
-        transition: opacity .5s ease-out;
-      }
+      top: 0;
       
       &:after {
         background: url("../graphics/backgrounds/#{$bg-image}") 50% 50% / cover no-repeat;

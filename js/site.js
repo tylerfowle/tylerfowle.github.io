@@ -15,7 +15,7 @@ $(document).ready(function(){
 
     if ( $(window).outerWidth() <= 640 ) {
 
-      e.preventDefault;
+      //e.preventDefault;
 
       if ( $('body').hasClass('nav_is_visible') ) {
 
