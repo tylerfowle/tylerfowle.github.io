@@ -9,13 +9,16 @@
 }
 
 
-header.title {
+header {
   text-align: center;
+  padding-top: 30px;
   .name,
   .title {
     font-family: $font-family-5;
     font-size: 20px;
     color: #333;
+  }
+  .name {
   }
   .title {
     font-size: 24px;
