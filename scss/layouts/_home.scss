@@ -1,3 +1,55 @@
 // =========================================================
 // Homepage
 // =========================================================
+
+.wrap {
+  position: relative;
+  max-width: 1070px;
+  margin: 0 auto;
+}
+
+
+header.title {
+  text-align: center;
+  .name,
+  .title {
+    font-family: $font-family-5;
+    font-size: 20px;
+    color: #333;
+  }
+  .title {
+    font-size: 24px;
+  }
+}
+
+section.social {
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  li {
+    width: 25%;
+    height: 300px;
+    min-width: 300px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .social_box {
+
+  }
+  i {
+    font-size: 120px;
+    transition: font-size .2s ease;
+    &:hover {
+      font-size: 130px;
+    }
+  }
+  .fa-twitter { color: $twitter; }
+  .fa-codepen { color: $codepen; }
+  .fa-github { color: $github; }
+  .fa-dribbble { color: $dribbble; }
+
+}
