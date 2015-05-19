@@ -9,14 +9,11 @@
 @import "components/structure";
 
 //layouts
-@import "components/homepage";
-@import "components/main";
+@import "layouts/home";
+@import "layouts/work";
+@import "layouts/social";
+@import "layouts/contact";
 
 //nav
 @import "components/nav";
 @import "components/nav_open";
-@import "components/page";
-
-//content
-@import "components/social_content";
-@import "components/work_content";

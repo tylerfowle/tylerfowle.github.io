@@ -1,45 +1,27 @@
 //site.js
 //functions
-function remover() {
-  $('body').removeClass('home_page work_page social_page contact_page');
-}
-
 $(window).load(function(){
   $('body').addClass('window_load');
 }); //end window load
 
+
+
 $(document).ready(function(){
 
 
-  $('nav.main_nav a').on('click', function(e){
 
-    if ( $(window).outerWidth() <= 640 ) {
 
-      //e.preventDefault;
 
-      if ( $('body').hasClass('nav_is_visible') ) {
-
-        remover();
-        var className = $(this).parent('li').attr('class');
-        $('body').addClass(className + '_page');
-        $('body').toggleClass('nav_is_visible');
-
-      }
-      else {
-
-        $('body').toggleClass('nav_is_visible');
-
-      }
-
-    }
-    else {
-
-      remover();
-      var className = $(this).parent('li').attr('class');
-      $('body').addClass(className + '_page');
-
+  var elementTop = $('.nav').offset().top;
+  $(window).scroll(function() {
+    if( $(window).scrollTop() >= elementTop ) {
+      $('body').addClass('nav_fixed');
+    } else {
+      $('body').removeClass('nav_fixed');
     }
   });
+
+
 
 
 }); //end document ready

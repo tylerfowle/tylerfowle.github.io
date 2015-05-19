@@ -1,12 +1,11 @@
-/*
-//==========================\\
-|| Structure                ||
-\\==========================//
-*/
+// =========================================================
+// Structure
+// =========================================================
 
+// Reset
 *{box-sizing: border-box;}
 
-//general structure
+// General Structure
 html {
   height: 100%;
   width: 100%;
@@ -23,7 +22,7 @@ body {
   margin: 0 auto;
 }
 
-//general rules
+// General Rules
 a,
 a:link,
 a:visited {
@@ -51,25 +50,32 @@ h1,h2,h3,h4,h5,h6 {
   text-align: right;
   text-transform: uppercase;
 }
+
 h1 {
   font-size: 60px;
 }
+
 h2 {
   font-size: 50px;
   letter-spacing: 1px;
 }
+
 h3 {
   font-size: 40px;
 }
+
 h4 {
   font-size: 30px;
 }
+
 h5 {
   font-size: 20px;
 }
+
 h6 {
   font-size: 16px;
 }
+
 hr {
   height: 0;
   border: 0;

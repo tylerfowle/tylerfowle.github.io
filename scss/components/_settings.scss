@@ -1,19 +1,19 @@
-/*
-//==========================\\
-|| Settings                 ||
-\\==========================//
-*/
+// =========================================================
+// Settings
+// =========================================================
 
-//fonts
+
+// fonts
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,300,600,700");
 
-//vars
+
+// vars
 $font-family-1: "Open Sans", sans-serif;
 $wrap-width: 1170px;
 $body-bg-color: #222;
 
 
-//social colors
+// social colors
 $github: #161414;
 $facebook: #3B5998;
 $flickr: #FE0883;
@@ -34,6 +34,8 @@ $zerply: #9DCC7A;
 $beehance: #008CFF;
 $aim: #FCD20B;
 
+
+// extend social colors
 %github { color: $github; }
 %facebook { color: $facebook; }
 %flickr { color: $flickr; }
