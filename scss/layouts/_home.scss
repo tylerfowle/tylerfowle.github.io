@@ -11,17 +11,17 @@
 
 header {
   text-align: center;
-  padding-top: 30px;
+  padding: 30px;
   .name,
   .title {
     font-family: $font-family-5;
-    font-size: 20px;
+    font-size: 36px;
     color: #333;
   }
   .name {
   }
   .title {
-    font-size: 24px;
+    font-size: 15px;
   }
 }
 
@@ -30,25 +30,27 @@ section.social {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
   }
   li {
     width: 25%;
-    height: 300px;
-    min-width: 300px;
+    height: 200px;
+    min-width: 200px;
 
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  .social_box {
-
+    &:hover {
+      i {color: #fff;}
+      transition: background .3s ease;
+    }
+    &.twitter:hover {background: $twitter;}
+    &.codepen:hover {background: $codepen;}
+    &.github:hover {background: $github;}
+    &.dribbble:hover {background: $dribbble;}
   }
   i {
     font-size: 120px;
-    transition: font-size .2s ease;
-    &:hover {
-      font-size: 130px;
-    }
   }
   .fa-twitter { color: $twitter; }
   .fa-codepen { color: $codepen; }
