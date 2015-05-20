@@ -8,6 +8,30 @@
   margin: 0 auto;
 }
 
+body {
+  background: #222;
+  color: #eee;
+}
+
+.bg-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 1;
+  background: #222;
+}
+
+.bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: .1;
+  background: #fff url('../graphics/backgrounds/desk_workstation.jpg');
+}
 
 header {
   text-align: center;
@@ -16,7 +40,7 @@ header {
   .title {
     font-family: $font-family-5;
     font-size: 36px;
-    color: #333;
+    //color: #333;
   }
   .name {
   }
@@ -33,6 +57,7 @@ section.social {
     flex-wrap: wrap;
   }
   li {
+    position: relative;
     width: 25%;
     height: 200px;
     min-width: 200px;
@@ -40,21 +65,31 @@ section.social {
     display: flex;
     justify-content: center;
     align-items: center;
+    
+    transition: all .4s ease;
+    z-index: 5;
+    transform: scale(1);
+
     &:hover {
-      i {color: #fff;}
-      transition: background .3s ease;
+      transform: scale(1.1);
+      z-index: 100;
+
+      i {
+        color: #fff;
+      }
     }
-    &.twitter:hover {background: $twitter;}
-    &.codepen:hover {background: $codepen;}
-    &.github:hover {background: $github;}
-    &.dribbble:hover {background: $dribbble;}
+    &.twitter {background: $twitter;}
+    &.codepen {background: $codepen;}
+    &.github {background: $github;}
+    &.dribbble {background: $dribbble;}
   }
   i {
+    color: #fff;
     font-size: 120px;
   }
-  .fa-twitter { color: $twitter; }
-  .fa-codepen { color: $codepen; }
-  .fa-github { color: $github; }
-  .fa-dribbble { color: $dribbble; }
+  //.fa-twitter { color: $twitter; }
+  //.fa-codepen { color: $codepen; }
+  //.fa-github { color: $github; }
+  //.fa-dribbble { color: $dribbble; }
 
 }
