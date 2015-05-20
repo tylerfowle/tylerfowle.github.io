@@ -11,6 +11,9 @@
 body {
   background: #222;
   color: #eee;
+  @include small-down {
+    color: #222;
+  }
 }
 
 .bg-screen {
@@ -21,6 +24,9 @@ body {
   bottom: 0;
   opacity: 1;
   background: #222;
+  @include small-down {
+    background: #dbdbdb;
+  }
 }
 
 .bg-img {
@@ -30,7 +36,9 @@ body {
   right: 0;
   bottom: 0;
   opacity: .1;
-  background: #fff url('../graphics/backgrounds/desk_workstation.jpg');
+  @include medium-up {
+    background: #fff url('../graphics/backgrounds/desk_workstation.jpg') 50% 50% / cover no-repeat;
+  }
 }
 
 header {
@@ -62,11 +70,15 @@ section.social {
     height: 200px;
     min-width: 200px;
 
+    @include medium-down {
+      width: 50%;
+    }
+
     display: flex;
     justify-content: center;
     align-items: center;
     
-    transition: all .4s ease;
+    transition: transform .4s ease;
     z-index: 5;
     transform: scale(1);
 
