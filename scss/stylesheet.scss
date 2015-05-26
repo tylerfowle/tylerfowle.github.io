@@ -8,13 +8,16 @@
 @import "components/settings";
 @import "components/structure";
 
+//components
+@import "components/main";
+@import "components/body";
+@import "components/nav";
+
 //layouts
-@import "layouts/home";
-@import "layouts/work";
-@import "layouts/social";
-@import "layouts/contact";
+@import "layouts/header";
 @import "layouts/footer";
 
-//nav
-@import "components/nav";
-@import "components/nav_open";
+@import "layouts/home";
+@import "layouts/portfolio";
+@import "layouts/scribbles";
+@import "layouts/connect";
