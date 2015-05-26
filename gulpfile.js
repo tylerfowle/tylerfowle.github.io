@@ -17,7 +17,7 @@ gulp.task('sass', function() {
             "sourcemap=none": true // hack to allow auto-prefixer to work
         }))
 		.pipe(autoprefixer({
-            browsers: ['last 5 version'],
+            browsers: ['> 5%', 'last 2 versions', 'Firefox >= 30', 'Opera >= 12', 'Safari >= 5', 'Explorer >= 10'],
             cascade: false
         }))
 		.on('error', function (err) { console.log(err.message); })
