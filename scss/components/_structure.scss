@@ -13,7 +13,7 @@ html {
 
 body {
   overflow-x: hidden;
-  font-family: $font-family-1;
+  font-family: $font-1;
   font-weight: 300;
 }
 
@@ -41,13 +41,17 @@ li {
   padding: 0;
 }
 
+img {
+  vertical-align: middle;
+}
+
 h1,h2,h3,h4,h5,h6 {
   color: #fff;
-  font-weight: 300;
-  margin: 0;
+  font-weight: bold;
+  margin: 0 0 10px 0;
   padding: 4px 0;
   line-height: 1;
-  text-align: right;
+  letter-spacing: 1px;
   text-transform: uppercase;
 }
 
