@@ -135,7 +135,7 @@ section {
     }
     .col {
       width: 50%;
-      min-width: 500px;
+      flex: 1 350px;
       padding: 20px;
       @include small-down {
         min-width: 0;
