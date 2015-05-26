@@ -24,6 +24,7 @@
 /////////////
 .title {
   height: 100vh;
+  min-height: 400px;
   font-family: $font-0;
   font-size: 100px;
   font-weight: bold;
@@ -32,7 +33,7 @@
   }
   @include small-down {
     font-size: 40px;
-    min-height: 560px;
+    min-height: 550px;
     span {
       width: 100%;
       display: block;
