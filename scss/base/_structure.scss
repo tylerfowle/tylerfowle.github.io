@@ -12,13 +12,16 @@ html {
 }
 
 body {
+  height: 100%;
+  width: 100%;
   overflow-x: hidden;
-  font-family: $font-1;
+  font-family: $font-0;
   font-weight: 300;
 }
 
 .wrap {
   max-width: $wrap-width;
+  padding: $wrap-padding;
   margin: 0 auto;
 }
 

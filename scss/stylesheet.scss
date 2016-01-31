@@ -2,11 +2,11 @@
 @import "vendor/normalize";
 
 //mixins
-@import "components/mixins";
+@import "base/mixins";
 
 //settings
-@import "components/settings";
-@import "components/structure";
+@import "base/settings";
+@import "base/structure";
 
 //components
 @import "components/main";
@@ -17,7 +17,4 @@
 @import "layouts/header";
 @import "layouts/footer";
 
-@import "layouts/home";
-@import "layouts/portfolio";
-@import "layouts/scribbles";
-@import "layouts/connect";
+@import "layouts/homepage";

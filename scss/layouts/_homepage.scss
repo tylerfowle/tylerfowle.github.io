@@ -1,0 +1,68 @@
+// =========================================================
+// Homepage
+// =========================================================
+@mixin window_load {
+  @at-root {
+    body.window_load {
+      @content 
+    }
+  }
+}
+
+.homepage {
+  background: #ded9d7;
+  padding: 20px 40px;
+
+  .site-container {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+
+
+
+  .card {
+    background: #fff;
+    max-width: 60%;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 12px -1px rgba(#222,.4);
+    overflow: auto;
+  }
+
+
+  .title {
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 20px;
+    strong {
+      font-size: 70px;
+      color: #222;
+    }
+  }
+
+
+
+  .nav {
+    text-align: center;
+    margin-bottom: 20px;
+    a {
+      color: #222;
+      font-size: 12px;
+    }
+  }
+
+
+  .content {
+    margin: 0 auto;
+    padding: 20px;
+    
+  }
+
+
+
+
+
+}
