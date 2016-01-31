@@ -140,7 +140,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 li { margin: 0; padding: 0; }
 
-img { vertical-align: middle; }
+img { max-width: 100%; vertical-align: middle; }
 
 h1, h2, h3, h4, h5, h6 { font-weight: bold; margin: 0 0 10px 0; padding: 4px 0; line-height: 1; letter-spacing: 1px; text-transform: uppercase; }
 
@@ -158,11 +158,42 @@ h6 { font-size: 16px; }
 
 hr { height: 0; border: 0; border-top: 1px solid #222; }
 
-.homepage { background: #ded9d7; padding: 20px 40px; }
-.homepage .site-container { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; height: 100%; width: 100%; overflow: hidden; }
-.homepage .card { background: #fff; max-width: 60%; padding: 20px; border-radius: 5px; box-shadow: 0 0 12px -1px rgba(34, 34, 34, 0.4); overflow: auto; }
-.homepage .title { text-align: center; font-size: 50px; margin-bottom: 20px; }
-.homepage .title strong { font-size: 70px; color: #222; }
-.homepage .nav { text-align: center; margin-bottom: 20px; }
-.homepage .nav a { color: #222; font-size: 12px; }
-.homepage .content { margin: 0 auto; padding: 20px; }
+.homepage { overflow: hidden; }
+.homepage .site-container { position: relative; height: 100%; width: 100%; -webkit-transition: -webkit-transform 1s ease; transition: transform 1s ease; }
+.homepage .page { padding: 20px; height: 100%; width: 100%; background: grey; position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
+.homepage .column-0.row-0 { -webkit-transform: translate(0%, 0%); -ms-transform: translate(0%, 0%); transform: translate(0%, 0%); }
+.homepage .column-0.row-1 { -webkit-transform: translate(0%, 100%); -ms-transform: translate(0%, 100%); transform: translate(0%, 100%); }
+.homepage .column-0.row-2 { -webkit-transform: translate(0%, 200%); -ms-transform: translate(0%, 200%); transform: translate(0%, 200%); }
+.homepage .column-0.row-3 { -webkit-transform: translate(0%, 300%); -ms-transform: translate(0%, 300%); transform: translate(0%, 300%); }
+.homepage .column-0.row-4 { -webkit-transform: translate(0%, 400%); -ms-transform: translate(0%, 400%); transform: translate(0%, 400%); }
+.homepage .column-0.row-5 { -webkit-transform: translate(0%, 500%); -ms-transform: translate(0%, 500%); transform: translate(0%, 500%); }
+.homepage .column-1.row-0 { -webkit-transform: translate(100%, 0%); -ms-transform: translate(100%, 0%); transform: translate(100%, 0%); }
+.homepage .column-1.row-1 { -webkit-transform: translate(100%, 100%); -ms-transform: translate(100%, 100%); transform: translate(100%, 100%); }
+.homepage .column-1.row-2 { -webkit-transform: translate(100%, 200%); -ms-transform: translate(100%, 200%); transform: translate(100%, 200%); }
+.homepage .column-1.row-3 { -webkit-transform: translate(100%, 300%); -ms-transform: translate(100%, 300%); transform: translate(100%, 300%); }
+.homepage .column-1.row-4 { -webkit-transform: translate(100%, 400%); -ms-transform: translate(100%, 400%); transform: translate(100%, 400%); }
+.homepage .column-1.row-5 { -webkit-transform: translate(100%, 500%); -ms-transform: translate(100%, 500%); transform: translate(100%, 500%); }
+.homepage .column-2.row-0 { -webkit-transform: translate(200%, 0%); -ms-transform: translate(200%, 0%); transform: translate(200%, 0%); }
+.homepage .column-2.row-1 { -webkit-transform: translate(200%, 100%); -ms-transform: translate(200%, 100%); transform: translate(200%, 100%); }
+.homepage .column-2.row-2 { -webkit-transform: translate(200%, 200%); -ms-transform: translate(200%, 200%); transform: translate(200%, 200%); }
+.homepage .column-2.row-3 { -webkit-transform: translate(200%, 300%); -ms-transform: translate(200%, 300%); transform: translate(200%, 300%); }
+.homepage .column-2.row-4 { -webkit-transform: translate(200%, 400%); -ms-transform: translate(200%, 400%); transform: translate(200%, 400%); }
+.homepage .column-2.row-5 { -webkit-transform: translate(200%, 500%); -ms-transform: translate(200%, 500%); transform: translate(200%, 500%); }
+.homepage .column-3.row-0 { -webkit-transform: translate(300%, 0%); -ms-transform: translate(300%, 0%); transform: translate(300%, 0%); }
+.homepage .column-3.row-1 { -webkit-transform: translate(300%, 100%); -ms-transform: translate(300%, 100%); transform: translate(300%, 100%); }
+.homepage .column-3.row-2 { -webkit-transform: translate(300%, 200%); -ms-transform: translate(300%, 200%); transform: translate(300%, 200%); }
+.homepage .column-3.row-3 { -webkit-transform: translate(300%, 300%); -ms-transform: translate(300%, 300%); transform: translate(300%, 300%); }
+.homepage .column-3.row-4 { -webkit-transform: translate(300%, 400%); -ms-transform: translate(300%, 400%); transform: translate(300%, 400%); }
+.homepage .column-3.row-5 { -webkit-transform: translate(300%, 500%); -ms-transform: translate(300%, 500%); transform: translate(300%, 500%); }
+.homepage .column-4.row-0 { -webkit-transform: translate(400%, 0%); -ms-transform: translate(400%, 0%); transform: translate(400%, 0%); }
+.homepage .column-4.row-1 { -webkit-transform: translate(400%, 100%); -ms-transform: translate(400%, 100%); transform: translate(400%, 100%); }
+.homepage .column-4.row-2 { -webkit-transform: translate(400%, 200%); -ms-transform: translate(400%, 200%); transform: translate(400%, 200%); }
+.homepage .column-4.row-3 { -webkit-transform: translate(400%, 300%); -ms-transform: translate(400%, 300%); transform: translate(400%, 300%); }
+.homepage .column-4.row-4 { -webkit-transform: translate(400%, 400%); -ms-transform: translate(400%, 400%); transform: translate(400%, 400%); }
+.homepage .column-4.row-5 { -webkit-transform: translate(400%, 500%); -ms-transform: translate(400%, 500%); transform: translate(400%, 500%); }
+.homepage .column-5.row-0 { -webkit-transform: translate(500%, 0%); -ms-transform: translate(500%, 0%); transform: translate(500%, 0%); }
+.homepage .column-5.row-1 { -webkit-transform: translate(500%, 100%); -ms-transform: translate(500%, 100%); transform: translate(500%, 100%); }
+.homepage .column-5.row-2 { -webkit-transform: translate(500%, 200%); -ms-transform: translate(500%, 200%); transform: translate(500%, 200%); }
+.homepage .column-5.row-3 { -webkit-transform: translate(500%, 300%); -ms-transform: translate(500%, 300%); transform: translate(500%, 300%); }
+.homepage .column-5.row-4 { -webkit-transform: translate(500%, 400%); -ms-transform: translate(500%, 400%); transform: translate(500%, 400%); }
+.homepage .column-5.row-5 { -webkit-transform: translate(500%, 500%); -ms-transform: translate(500%, 500%); transform: translate(500%, 500%); }
