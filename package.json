@@ -1,29 +1,20 @@
 {
-  "name": "tylerfowle",
+  "name": "Gulp",
   "version": "1.0.0",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com/tylerfowle/tylerfowle.github.io"
-  },
-  "description": "Tyler Fowle - portfolio",
+  "description": "",
   "main": "gulpfile.js",
-  "scripts": {
-    "test": "gulp"
-  },
-  "author": "FED",
+  "author": "tylerfowle",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.7.11",
+    "browser-sync": "^2.11.1",
     "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^2.3.1",
-    "gulp-file-include": "^0.9.0",
-    "gulp-include": "^1.1.1",
-    "gulp-jshint": "^1.11.0",
-    "gulp-notify": "^2.2.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-jshint": "^2.0.0",
     "gulp-rename": "^1.2.2",
-    "gulp-ruby-sass": "^1.0.5",
-    "gulp-uglify": "^1.2.0",
-    "gulp-util": "^3.0.4"
+    "gulp-ruby-sass": "^2.0.6",
+    "gulp-uglify": "^1.5.1",
+    "gulp-util": "^3.0.7",
+    "jshint": "^2.9.1"
   },
   "dependencies": {}
 }
