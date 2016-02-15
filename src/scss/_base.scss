@@ -105,17 +105,18 @@ img {
 }
 
 
+$inset: 0;
 .site-container {
   position: absolute;
-  top: 50px;
-  left: 50px;
-  bottom: 50px;
-  right: 50px;
+  top: $inset;
+  left: $inset;
+  bottom: $inset;
+  right: $inset;
   padding: 40px;
   transition: .5s ease opacity .2s, 0s ease visibility .2s;
   background: $orange;
   z-index: 10;
-  @extend %box-shadow;
+  // @extend %box-shadow;
 
 }
 
