@@ -7,16 +7,21 @@ $font-2: "Courier New", Courier, monospace;
 //colors
 $nearblack: #222;
 
+$xdkgrey:  #282828;
 $dkgrey:  #242d2d;
 $mdgrey:  #394344;
 $grey:    #4b5b59;
 $ltgrey:  #82837d;
 $xltgrey: #c5cfc6;
 
+$blue: #001727;
+$xltblue: #beceb2;
+
 $orange:  #d3472e;
 
+$dkoffwhite: #ffffb5;
 $offwhite: #b9c1c1;
-$white:    rgba(#efefef,.9);
+$white:    rgba(#efefef,.98);
 
 //other
 $wrap-width: 1000px;
@@ -30,32 +35,39 @@ $wrap-width: 1000px;
   99% {opacity: 0;}
   100% {opacity: 1;}
 }
-@keyframes spin {
-  0% {transform: rotate(0);}
-  100% {transform: rotate(360deg);}
+
+
+//extends
+%box-shadow {
+  box-shadow: 0 0 30px -3px $dkgrey;
+}
+
+%hand-border {
+  border-radius:  255px 15px 225px 15px/15px 225px 15px 255px;
 }
 
 
 
+
 ////////////////////////////////////////////////////////////////////////////////
-* {
+*, *:before, *:after {
   box-sizing: border-box;
 }
 
 html {
   height: 100%;
+  box-sizing: border-box;
 }
 
 body {
   height: 100%;
-  background: $offwhite;
-  background: -webkit-linear-gradient(to left, $offwhite , $xltgrey); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, $offwhite , $xltgrey); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   overflow: hidden;
-
   font-family: $font-1;
   color: $white;
   font-size: 14px;
+
+  background: $dkoffwhite;
+  background: linear-gradient(to left, $dkoffwhite, lighten($dkoffwhite,2));
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -64,6 +76,11 @@ h1,h2,h3,h4,h5,h6 {
   font-weight: 300;
   line-height: 1.2;
   margin-top: 0;
+}
+
+h1 {
+  font-size: 40px;
+  line-height: 46px;
 }
 
 ul {
@@ -75,6 +92,9 @@ ul {
 a {
   color: $orange;
   text-decoration: none;
+  &:hover {
+    color: $orange;
+  }
 }
 
 strong {
@@ -87,193 +107,121 @@ img {
 }
 
 
-.loading-container {
-  height: 90%;
-  width: 90%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  padding: 20px;
-  transform: translate(-50%,-50%);
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  // .progress-bar {
-  //   position: relative;
-  //   width: 200px;
-  //   height: 200px;
-  //   animation: spin 1s infinite linear;
-  //   .progress {
-  //     position: absolute;
-  //     width: 100px;
-  //     height: 200px;
-  //     border: 4px solid $orange;
-  //     transform-origin: 100% 50%;
-  //     border-radius: 100% 0 0 100% / 50% 0 0 50%;
-  //     z-index: 1;
-  //   }
-  //   .progress2 {
-  //     width: 100px;
-  //     height: 200px;
-  //     border: 4px solid $orange;
-  //     transform-origin: 100% 50%;
-  //     border-radius: 100% 0 0 100% / 50% 0 0 50%;
-  //     transform: rotate(150deg);
-  //   }
-  //   .mask {
-  //     position: absolute;
-  //     top: 4px;
-  //     left: 4px;
-  //     right: 4px;
-  //     bottom: 4px;
-  //     background: #bec7c3;
-  //     border-radius: 100px;
-  //     z-index: 10;
-
-  //   }
-  // }
-}
-
+$inset: 0;
 .site-container {
-  height: 90%;
-  width: 90%;
-  background: $dkgrey;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  padding: 20px;
-  transform: translate(-50%,-50%);
-  box-shadow: 0 0 30px -4px $dkgrey;
-  transition: 0s ease opacity .5s, .5s ease visibility .5s;
+  top: $inset;
+  left: $inset;
+  bottom: $inset;
+  right: $inset;
+  padding: 40px;
+  transition: .5s ease opacity .2s, 0s ease visibility .2s;
+  background: $orange;
   z-index: 10;
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    opacity: .5;
-    background: $dkgrey; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, $dkgrey , $grey); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, $dkgrey , $grey); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    z-index: -1;
-  }
+}
 
-  @include large-down {
+
+
+.button {
+  height: 40px;
+  width: 40px;
+  border: 1px solid $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 6px;
+  cursor: pointer;
+}
+
+
+.options-button {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    border-radius: 100px;
+    border: 1px solid $white;
+  }
+  .bar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
-    height: 100%;
+    height: 1px;
+    background: $white;
+    transform: center center;
+    &:nth-child(1) {transform: rotate(0deg)}
+    &:nth-child(2) {transform: rotate(45deg)}
+    &:nth-child(3) {transform: rotate(90deg)}
+    &:nth-child(4) {transform: rotate(180deg)}
   }
 }
 
 
-.sidebar-container {
+
+.menu-container {
   position: absolute;
-  top: 20px;
-  left: 20px;
-  background: $orange;
-  height: 60px;
-  width: 60px;
-  box-shadow: 0 0 30px -4px $dkgrey;
-  transition: 1s ease-in-out all;
-  z-index: 1000;
-  overflow: hidden;
-  .menu-toggle {
-    padding: 10px;
-    height: 60px;
-    width: 60px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-    cursor: pointer;
+  top: 40px;
+  left: 40px;
+  .open-button {
+    top: 0;
+    left: 0;
     .bar {
       width: 100%;
-      height: 4px;
+      height: 1px;
       background: $white;
     }
   }
 
-  .open-button {
-    visibility: visible;
-    transition: .5s ease all 1s;
-    height: 100%;
-  }
-
-  .close-button {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-
-    background: $dkgrey;
-    box-shadow: 0 0 30px -4px $dkgrey;
-    transition: .5s ease all 0s;
-    opacity: 0;
-    visibility: hidden;
-    .bar {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      &:first-child {
-        transform: translate(-50%,-50%) rotate(45deg);
-      }
-      &:last-child {
-        transform: translate(-50%,-50%) rotate(-45deg);
-      }
-    }
-  }
-
 }
+
+
+
+
+
+
+
+.page-container {
+  height: 90%;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $white;
+  .page-content {
+    width: 400px;
+  }
+}
+
 
 
 
 nav.main-nav {
-  opacity: 0;
-  visibility: hidden;
-  transition: 0s ease opacity 0s, 0s ease visibility 0s;
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  right: 100px;
-  color: $white;
-  a {
-    display: block;
-    color: $white;
-    padding: 10px 0;
-    opacity: 0;
-    transition: .5s ease all 0s;
-    position: relative;
-    left: -20px;
-    &:after {
-      content: '_';
-      opacity: 0;
-    }
-    &:hover {
-      &:after {
-        opacity: 1;
-        animation: blink 1s infinite;
-      }
-    }
+  ul {}
+  li {
+    &:nth-child(1) a {transition-delay: 0.4s}
+    &:nth-child(2) a {transition-delay: 0.3s}
+    &:nth-child(3) a {transition-delay: 0.2s}
+    &:nth-child(4) a {transition-delay: 0.1s}
   }
-}
-
-
-.window-container {
-  height: 100%;
-  // max-width: $wrap-width;
-
-  padding: 20px;
-  padding-right: 5000px;
-  margin-left: 100px;
-  margin-right: -5000px;
-  transition: 1s ease-in-out margin-left;
-  overflow: auto;
-  @include large-down {
-    transition: 1s ease-in-out margin-top;
-    margin-top: 50px;
-    margin-left: 0;
+  a {
+    display: inline-block;
+    border: 1px solid $white;
+    padding: 4px;
+    margin-top: 3px;
+    color: $white;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s ease opacity .2s, 0 ease visibility 0;
   }
 }
 
@@ -284,72 +232,34 @@ nav.main-nav {
 
 ///////////////////////////////////////////////////////////////////////////
 .menu-is-open {
-  .sidebar-container {
-    height: 100%;
-    bottom: 20px;
-    width: 300px;
-    overflow: initial;
-    @include small-down {
-      top: 0;
+
+  .open-button {
+    justify-content: space-between;
+
+  }
+
+  nav.main-nav {
+    li {
+      &:nth-child(1) a {transition-delay: 0.1s}
+      &:nth-child(2) a {transition-delay: 0.2s}
+      &:nth-child(3) a {transition-delay: 0.3s}
+      &:nth-child(4) a {transition-delay: 0.4s}
+    }
+    a {
+      opacity: 1;
+      visibility: visible;
       left: 0;
-      height: 100%;
-      width: 100%;
-    }
-    .open-button {
-      opacity: 0;
-      visibility: hidden;
-      transition: .2s ease all 0s;
-    }
-    .close-button {
-      opacity: 1;
-      visibility: visible;
-      transition: .5s ease all .5s;
-      @include xlarge-up {
-        opacity: 0;
-        visibility: hidden;
-      }
-    }
-    nav.main-nav {
-      opacity: 1;
-      visibility: visible;
-      transition: .5s ease opacity .5s, .5s ease visibility .5s;
-      li {
-        &:nth-child(1) a {transition: .5s ease left 1.0s, .5s ease opacity 1.0s;}
-        &:nth-child(2) a {transition: .5s ease left 1.2s, .5s ease opacity 1.2s;}
-        &:nth-child(3) a {transition: .5s ease left 1.4s, .5s ease opacity 1.4s;}
-        &:nth-child(4) a {transition: .5s ease left 1.6s, .5s ease opacity 1.6s;}
-      }
-      a {
-        position: relative;
-        opacity: 1;
-        left: 0;
-      }
     }
   }
-
-  .window-container {
-    margin-left: 300px;
-    @include large-down {
-      margin-left: 0;
-    }
-  }
-
 }
 
 ///////////////////////////////////////////////////////////////////////////
-.window-is-loading {
+.pace-running {
   .site-container {
     opacity: 0;
     visibility: hidden;
   }
 }
-
-
-
-
-
-
-
 
 
 //pace
@@ -365,10 +275,12 @@ nav.main-nav {
   right: 0;
   bottom: 0;
   height: 10px;
-  width: 200px;
+  max-width: 500px;
   border: 1px solid $orange;
   overflow: hidden;
+  @extend %box-shadow;
 }
+
 
 .pace .pace-progress {
   transform: translate3d(0, 0, 0);
@@ -388,6 +300,12 @@ nav.main-nav {
   display: none;
 }
 
+// typed.js
+///////////////////////////////////////////////////////////////////////////
+.typed-cursor{
+  opacity: 1;
+  animation: blink 0.7s infinite;
+}
 
 
 
