@@ -35,15 +35,17 @@ $wrap-width: 1000px;
   99% {opacity: 0;}
   100% {opacity: 1;}
 }
-@keyframes spin {
-  0% {transform: rotate(0);}
-  100% {transform: rotate(360deg);}
-}
+
 
 //extends
 %box-shadow {
-  box-shadow: 0 0 30px -5px $dkgrey;
+  box-shadow: 0 0 30px -3px $dkgrey;
 }
+
+%hand-border {
+  border-radius:  255px 15px 225px 15px/15px 225px 15px 255px;
+}
+
 
 
 
@@ -116,26 +118,62 @@ $inset: 0;
   transition: .5s ease opacity .2s, 0s ease visibility .2s;
   background: $orange;
   z-index: 10;
-  // @extend %box-shadow;
-
 }
+
+
+
+.button {
+  height: 40px;
+  width: 40px;
+  border: 1px solid $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 6px;
+  cursor: pointer;
+}
+
+
+.options-button {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    border-radius: 100px;
+    border: 1px solid $white;
+  }
+  .bar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 1px;
+    background: $white;
+    transform: center center;
+    &:nth-child(1) {transform: rotate(0deg)}
+    &:nth-child(2) {transform: rotate(45deg)}
+    &:nth-child(3) {transform: rotate(90deg)}
+    &:nth-child(4) {transform: rotate(180deg)}
+  }
+}
+
 
 
 .menu-container {
   position: absolute;
   top: 40px;
   left: 40px;
-  
-  .menu-toggle {
-    height: 40px;
-    width: 40px;
-    border: 1px solid $white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    padding: 6px;
-    cursor: pointer;
+  .open-button {
+    top: 0;
+    left: 0;
     .bar {
       width: 100%;
       height: 1px;
@@ -143,21 +181,25 @@ $inset: 0;
     }
   }
 
-  .open-button {
-    
-  }
-
 }
 
 
 
 
+
+
+
 .page-container {
-  height: 100%;
-  margin: 0 200px;
-  overflow: auto;
-  margin-right: -3000px;
-  padding-right: 2990px;
+  height: 90%;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $white;
+  .page-content {
+    width: 400px;
+  }
 }
 
 
@@ -175,7 +217,7 @@ nav.main-nav {
     display: inline-block;
     border: 1px solid $white;
     padding: 4px;
-    margin-top: -1px;
+    margin-top: 3px;
     color: $white;
     opacity: 0;
     visibility: hidden;
@@ -190,6 +232,12 @@ nav.main-nav {
 
 ///////////////////////////////////////////////////////////////////////////
 .menu-is-open {
+
+  .open-button {
+    justify-content: space-between;
+
+  }
+
   nav.main-nav {
     li {
       &:nth-child(1) a {transition-delay: 0.1s}
@@ -233,6 +281,7 @@ nav.main-nav {
   @extend %box-shadow;
 }
 
+
 .pace .pace-progress {
   transform: translate3d(0, 0, 0);
   max-width: 500px;
@@ -251,6 +300,12 @@ nav.main-nav {
   display: none;
 }
 
+// typed.js
+///////////////////////////////////////////////////////////////////////////
+.typed-cursor{
+  opacity: 1;
+  animation: blink 0.7s infinite;
+}
 
 
 
