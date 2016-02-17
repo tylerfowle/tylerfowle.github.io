@@ -6,6 +6,7 @@ $font-2: "Courier New", Courier, monospace;
 
 //colors
 $nearblack: #222;
+$ltnearblack: #212121;
 
 $xdkgrey:  #282828;
 $dkgrey:  #242d2d;
@@ -19,6 +20,7 @@ $xltblue: #beceb2;
 
 // $orange:  #d3472e;
 $orange: #c44524;
+$neon-orange: #ff5700;
 
 $white-orange: #e9dab9;
 $white-dkorange: #d88e73;
@@ -57,7 +59,7 @@ $wrap-width: 1000px;
 ////////////////////////////////////////////////////////////////////////////////
 *, *:before, *:after {
   box-sizing: border-box;
-  cursor: nw-resize;
+  cursor: default;
 }
 
 html {
@@ -69,11 +71,9 @@ body {
   height: 100%;
   overflow: hidden;
   font-family: $font-1;
-  color: $white;
-  font-size: 14px;
-
-  background: $dkoffwhite;
-  background: linear-gradient(to left, $dkoffwhite, lighten($dkoffwhite,2));
+  color: $white-orange;
+  background: #131313;
+  font-size: 12px;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -85,8 +85,8 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 h1 {
-  font-size: 40px;
-  line-height: 46px;
+  font-size: 20px;
+  line-height: 26px;
 }
 
 ul {
@@ -96,10 +96,11 @@ ul {
 }
 
 a {
-  color: $orange;
+  color: $white-orange;
   text-decoration: none;
   &:hover {
-    color: $orange;
+    color: $nearblack;
+    background: $white-orange;
   }
 }
 
@@ -113,7 +114,7 @@ img {
 }
 
 
-$inset: 0;
+$inset: 10px;
 .site-container {
   position: absolute;
   top: $inset;
@@ -121,7 +122,7 @@ $inset: 0;
   bottom: $inset;
   right: $inset;
   padding: 20px;
-  background: $orange;
+  background: $xdkgrey;
   transition: .5s ease opacity .2s, 0s ease visibility .2s;
   z-index: 10;
 }
@@ -145,15 +146,24 @@ $inset: 0;
   position: absolute;
   top: 20px;
   left: 20px;
-  .open-button {
-    top: 0;
+  right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .nav-logo {
+    position: absolute;
     left: 0;
-    .bar {
-      width: 100%;
-      height: 1px;
-      background: $white-orange;
+  }
+
+  nav.main-nav {
+    a {
+      display: inline-block;
+      border: 1px solid $white-orange;
+      padding: 4px 8px;
     }
   }
+
 
 }
 
@@ -163,19 +173,24 @@ $inset: 0;
 
 
 
+
+
 .page-container {
+  display: none;
+  position: absolute;
   height: 500px;
   width: 400px;
-  left:  50%;
-  transform: translateX(-50%);
-  background: $dkgrey;
+  top: 60px;
+  left:  60px;
+  background: lighten($xdkgrey,2);
   border: 1px solid $white-orange;
+  z-index: 1;
   @extend %box-shadow;
 
   .title-bar {
     width: 100%;
     background: $white-orange;
-    padding-left: 20px;
+    padding-left: 30px;
     height: 20px;
     display: flex;
     align-items: center;
@@ -205,37 +220,13 @@ $inset: 0;
 }
 
 
-
-
-nav.main-nav {
-  display: none;
-  ul {}
-  li {
-  }
-  a {
-    display: inline-block;
-    border: 1px solid $white-orange;
-    padding: 4px;
-    margin-top: 3px;
-    color: $white-orange;
-  }
+.page-master-terminal {
+  display: block;
 }
 
 
 
 
-
-
-///////////////////////////////////////////////////////////////////////////
-.menu-is-open {
-  nav.main-nav {
-    display: block;
-    li {
-    }
-    a {
-    }
-  }
-}
 
 ///////////////////////////////////////////////////////////////////////////
 .pace-running {
@@ -260,7 +251,7 @@ nav.main-nav {
   bottom: 0;
   height: 10px;
   max-width: 500px;
-  border: 1px solid $orange;
+  border: 1px solid $white-orange;
   overflow: hidden;
   @extend %box-shadow;
 }
@@ -277,7 +268,7 @@ nav.main-nav {
   right: 100%;
   height: 100%;
   width: 100%;
-  background: $orange;
+  background: $white-orange;
 }
 
 .pace.pace-inactive {
