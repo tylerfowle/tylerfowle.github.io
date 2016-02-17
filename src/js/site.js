@@ -7,8 +7,41 @@
 
 $(document).ready(function(){
 
+  var openWindows = 1;
+  var depthIndex  = 1;
+  var startPos = 40;
+
+
   $('.menu-toggle').on('click', function(){
     $('body').toggleClass('menu-is-open');
+  });
+
+  $('.title-bar').on('mousedown',function(){
+    depthIndex += 1;
+    $(this).closest('.page-container').css({"zIndex": depthIndex});
+  });
+
+
+  $('.close-page-button').on('click',function(){
+    $(this).closest('.page-container').hide().removeClass('page-active');
+
+    openWindows += -1;
+  });
+
+  $('.menu-container a').on('click',function(e){
+    e.preventDefault();
+
+    var link = $(this).attr('href').replace('#', '');
+
+    if ( $('.page-container.page-'+link).hasClass('page-active') ) {
+
+    } else {
+      openWindows += 1;
+      depthIndex  += 1;
+      $('.page-container.page-'+link).addClass('page-active').css({"top": (openWindows * 20)+startPos+'px', "left": (openWindows * 20)+startPos+'px', "zIndex": depthIndex}).show();
+    }
+
+
   });
 
 });
@@ -16,8 +49,8 @@ $(document).ready(function(){
 
 
 $(function(){
-  $(".typed").typed({
-      strings: ["^1000 Hello.^100 Welcome to tOS 1.x<br> ^500 I'm a front end web dev."],
+  $(".page-master-terminal .typed").typed({
+    strings: ["^1000 Hello.^100 Welcome to tOS 1.x"],
       contentType: 'html', // or 'text'
       typeSpeed: 50,
       showCursor: true,
@@ -25,3 +58,8 @@ $(function(){
     });
 });
 
+
+
+$(function() {
+  $( '.page-draggable' ).draggable({handle: '.title-bar', containment: ".site-container", scroll: false });
+});
