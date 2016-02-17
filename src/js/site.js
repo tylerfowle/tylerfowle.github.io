@@ -11,13 +11,25 @@ $(document).ready(function(){
     $('body').toggleClass('menu-is-open');
   });
 
+  $('.close-page-button').on('click',function(){
+    $(this).closest('.page-container').hide();
+  });
+
+  $('.main-nav a').on('click',function(){
+    var link = $(this).attr('href');
+
+    if (link === '#intelligence') {
+      $('.page-container').show();
+    }
+  });
+
 });
 
 
 
 $(function(){
   $(".typed").typed({
-      strings: ["^1000 Hello.^100 Welcome to tOS 1.x<br> ^500 I'm a front end web dev."],
+      strings: ["^1000 Hello.^100 Welcome to tOS 1.x"],
       contentType: 'html', // or 'text'
       typeSpeed: 50,
       showCursor: true,
@@ -25,3 +37,8 @@ $(function(){
     });
 });
 
+
+
+$(function() {
+  $( '.page-draggable' ).draggable({handle: '.title-bar', containment: ".site-container", scroll: false });
+});
